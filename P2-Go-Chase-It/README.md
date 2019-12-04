@@ -1,6 +1,6 @@
 # RoboND-Term1-P2-Go-Chase-It
 Project 2 of Udacity Robotics Software Engineer Nanodegree Program
-![Overview](/pic/video_gif.gif)  
+![Overview](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P2-Go-Chase-It/pic/video_gif.gif)  
 ## Overview  
 In this project you'll create two ROS packages inside your `catkin_ws/src`: the `drive_bot` and the `ball_chaser` which will be used in Gazebo for all your upcoming projects in the [Udacity Robotics Software Engineer Nanodegree Program](https://www.udacity.com/course/robotics-software-engineer--nd209). Here are the steps to design the robot, house it inside your world, and program it to chase white-colored balls:  
 1. `drive_bot`:  
@@ -49,18 +49,6 @@ Directory Structure
 │   │   │   │   ├── DriveToTarget.srv
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
-│   │   ├── my_gokart                          # my_gokart package        
-│   │   │   ├── launch                         # launch folder for launch files   
-│   │   │   │   ├── gokart_description.launch
-│   │   │   │   ├── world.launch
-│   │   │   ├── urdf                           # urdf folder for xarco files
-│   │   │   │   ├── my_gokart.gazebo
-│   │   │   │   ├── my_gokart.xacro
-│   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── package.xml                    # package info
 │   │   ├── my_robot                           # my_robot package        
 │   │   │   ├── launch                         # launch folder for launch files   
 │   │   │   │   ├── robot_description.launch
@@ -72,26 +60,24 @@ Directory Structure
 │   │   │   │   ├── my_robot.xacro
 │   │   │   ├── worlds                         # world folder for world files
 │   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── office.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
-├── videos                                     # Video files
-│   ├── Term1-Project2-Go-Chase-It-Demo.gif    # Demo video
+├── pic                                     
+│   ├── record video.mp4                       # video
+│   ├── video_gif.gif                          # video
 ```
-- [Term1-Project2-Go-Chase-It-Demo.gif](/videos/Term1-Project2-Go-Chase-It-Demo.gif): A demo video for successful run.  
+- [record video.mp4](/pic/record video.mp4): A recording video.  
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
 - [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.  
-- [gokart_description.launch](/catkin_ws/src/my_gokart/launch/gokart_description.launch): Create gokart model in Gazebo world.  
 - [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.  
-- [my_gokart.gazebo](/catkin_ws/src/my_gokart/urdf/my_gokart.gazebo): Define my_gokart URDF model plugins.  
-- [my_gokart.xacro](/catkin_ws/src/my_gokart/urdf/my_gokart.xacro): Define my_gokart URDF model.  
-- [empty.world](/catkin_ws/src/my_gokart/worlds/empty.world): Gazebo world file that includes nothing.  
-- [myoffice.world](/catkin_ws/src/my_gokart/worlds/myoffice.world): Gazebo world file that includes the models.  
-- [CMakeLists.txt](/catkin_ws/src/my_gokart/CMakeLists.txt): File to link the C++ code to libraries.  
-- [robot_description.launch](/catkin_ws/src/my_robot/launch/robot_description.launch): Create robot model in Gazebo world.  
+- [robot_description.launch](/catkin_ws/src/my_robot/launch/robot_description.launch): Create robot model in Gazebo world. 
+- [empty.world](/catkin_ws/src/my_robot/worlds/empty.world): Gazebo world file that includes nothing.  
+- [office.world](/catkin_ws/src/my_robot/worlds/office.world): Gazebo world file that includes the models.  
+- [CMakeLists.txt](/catkin_ws/src/my_robot/CMakeLists.txt): File to link the C++ code to libraries.  
 - [hokuyo.dae](/catkin_ws/src/my_robot/meshes/hokuyo.dae): Hokuyo LiDAR sensor mesh model.  
 - [my_robot.gazebo](/catkin_ws/src/my_robot/urdf/my_robot.gazebo): Define my_robot URDF model plugins.  
 - [my_robot.xacro](/catkin_ws/src/my_robot/urdf/my_robot.xacro): Define my_robot URDF model.  
@@ -123,22 +109,3 @@ rosrun rqt_image_view rqt_image_view
 ## Code Style
 
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
-
-## Project Rubric  
-### 1. Basic Requirements  
-#### 1.1 Does the submission include the my_robot and the ball_chaser ROS packages?  
-Yes, it does.  
-### 1.2 Do these packages follow the directory structure detailed in the project description section?
-Yes, it does.  
-### 2. Robot Design
-#### 2.1 Does the submission include a design for a differential drive robot, using the Unified Robot Description Format?  
-Yes, it does.  
-### 3. Gazebo World  
-#### 3.1 Does the my_robot ROS package contain the Gazebo world?  
-Yes, it does.  
-### 4. Ball Chasing  
-#### 4.1 Does the ball_chaser ROS package contain two C++ ROS nodes to interact with the robot and make it chase a white-colored ball?  
-Yes, it does.  
-### 5. Launch Files  
-#### 5.1 Does the submission include world.launch and ball_chaser.launch files that launch all the nodes in this project?  
-Yes, it does.  
