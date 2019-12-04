@@ -1,6 +1,6 @@
 # RoboND-Term1-P2-Go-Chase-It
 Project 2 of Udacity Robotics Software Engineer Nanodegree Program
-![Overview](/videos/Term1-Project2-Go-Chase-It-Demo.gif)  
+![Overview](/pic/video.gif)  
 ## Overview  
 In this project you'll create two ROS packages inside your `catkin_ws/src`: the `drive_bot` and the `ball_chaser` which will be used in Gazebo for all your upcoming projects in the [Udacity Robotics Software Engineer Nanodegree Program](https://www.udacity.com/course/robotics-software-engineer--nd209). Here are the steps to design the robot, house it inside your world, and program it to chase white-colored balls:  
 1. `drive_bot`:  
@@ -100,35 +100,25 @@ Directory Structure
 * Clone this repository
 * Open the repository and make  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/catkin_ws/
 catkin_make
 ```
-* Launch my_robot/my_gokart in Gazebo to load both the world and plugins  
+* Launch my_robot in Gazebo to load both the world and plugins  
 ```
 roslaunch my_robot world.launch
-```  
-or  
-```
-roslaunch my_gokart world.launch
-```  
+```   
 * Launch ball_chaser and process_image nodes  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/catkin_ws/
 source devel/setup.bash
 roslaunch ball_chaser ball_chaser.launch
 ```  
 * Visualize  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/catkin_ws/
 source devel/setup.bash
 rosrun rqt_image_view rqt_image_view  
 ```  
-
-## Tips  
-1. It's recommended to update and upgrade your environment before running the code.  
-```bash
-sudo apt-get update && sudo apt-get upgrade -y
-```
 
 ## Code Style
 
