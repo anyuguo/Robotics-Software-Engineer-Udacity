@@ -29,6 +29,9 @@
       <geometry>
         <box size=".4 .2 .1"/>
       </geometry>
+      <material name="black_metal">
+        <color rgba="1 0 0 1"/>
+      </material>
     </collision>
 
     <visual name='chassis_visual'>
@@ -216,5 +219,21 @@
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+  
+  <gazebo reference="chassis">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Red</material>
+  </gazebo>
 
 </robot>
