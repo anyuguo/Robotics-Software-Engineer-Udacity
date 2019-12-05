@@ -109,3 +109,13 @@ rosrun rqt_image_view rqt_image_view
 ## Code Style
 
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+
+## Alert!!!
+
+Here comes the most stupid thing:
+
+After you follow the whole instruction on Udacity, you'll find out that your project won't be passed because of "Spawnmodel Failure: Model Name Already exists". Even though the whole project works with this little error, those reviewer still won't let you pass.
+
+All you have to do is delete everything about ```"<model name='my_robot'>"``` in "office.world" file.
+
+There is nothing mentioned in their instrcutions. Hope this'll help anyone who is in need.
