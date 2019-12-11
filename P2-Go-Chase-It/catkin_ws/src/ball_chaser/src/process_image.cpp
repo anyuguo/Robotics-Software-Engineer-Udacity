@@ -10,13 +10,13 @@ ros::ServiceClient client;
 void drive_robot(float lin_x, float ang_z)
 {
     ROS_INFO_STREAM("Driving the robot");
-    
+
     // TODO: Request a service and pass the velocities to it to drive the robot
     ball_chaser::DriveToTarget srv;
-    
+
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
-    
+
     // Call the command_robot service and pass the requested motor commands
     if (!client.call(srv))
     {
@@ -29,43 +29,53 @@ void drive_robot(float lin_x, float ang_z)
 void process_image_callback(const sensor_msgs::Image img)
 {
 
-    int white_pixel = 255;
-
     // TODO: Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
+
+    int i;
     
-    bool found_ball = false;
-    
-    int step = img.step;
-    int height = img.height;
-    
-    
+    int ball_position;
+    int ball_position_center;
+    int ball_position_sum = 0;
     int white_pixel_num = 0;
-	int x_position_sum = 0;
     
-    for (int i = 0; i < height; i++)
+    
+
+    for (i = 0; i + 2 < img.data.size(); i = i + 3)
     {
-        for (int j = 0; j < step; j++)
-		{
-			if (img.data[i * step + j] == white_pixel)
-			{
-				x_position_sum += j - step / 2.0;
-				white_pixel_num++;
-			}
-		}
-	}
-	
-	if (white_pixel_num == 0)
-	{
-		drive_robot(0.0, 0.0);
-	}
-	else
-	{
-		drive_robot(0.1, -4.0 * x_position_sum / white_pixel_num / (step /2.0));
-	}
+        if ((img.data[i] == 255) && (img.data[i+1] == 255) && (img.data[i+2] == 255))
+        {
+            ball_position = (i % (img.width * 3)) / 3;
+            ball_position_sum += ball_position;
+            white_pixel_num++;
+        }
+    }
     
+    if (white_pixel_num == 0)
+    {
+        drive_robot(0, 0);
+    }
+    else
+    {
+        ball_position_center = ball_position_sum / white_pixel_num;
+        
+        if(ball_position_center < img.width / 3)
+        {
+            drive_robot(0.1, 0.5);
+        }
+        else if(ball_position_center > img.width * 2 / 3)
+        {
+            drive_robot(0.1, -0.5);
+        }
+        else
+        {
+            drive_robot(0.1, 0);
+        }
+    }
+
+
 }
 
 int main(int argc, char** argv)
