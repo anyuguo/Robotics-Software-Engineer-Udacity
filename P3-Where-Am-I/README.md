@@ -1,6 +1,6 @@
 # RoboND-Term1-P3-Where-Am-I
 Project 3 of Udacity Robotics Software Engineer Nanodegree Program
-![Overview](/videos/Term1-Project3-Where-Am-I-Demo_2.gif)  
+![Overview](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P3-Where-Am-I/video.gif)  
 ## Overview  
 In this project you'll utilize ROS AMCL package to accurately localize a mobile robot inside a map in the Gazebo simulation environments. Here are the steps to learn several aspects of robotic software engineering with a focus on ROS:  
 * Create a ROS package that launches a custom robot model in a custom Gazebo world  
@@ -57,18 +57,6 @@ Directory Structure
 │   │   │   │   ├── DriveToTarget.srv
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
-│   │   ├── my_gokart                          # my_gokart package        
-│   │   │   ├── launch                         # launch folder for launch files   
-│   │   │   │   ├── gokart_description.launch
-│   │   │   │   ├── world.launch
-│   │   │   ├── urdf                           # urdf folder for xarco files
-│   │   │   │   ├── my_gokart.gazebo
-│   │   │   │   ├── my_gokart.xacro
-│   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── package.xml                    # package info
 │   │   ├── my_robot                           # my_robot package        
 │   │   │   ├── config                         # config folder for configuration files   
 │   │   │   │   ├── base_local_planner_params.yaml
@@ -80,8 +68,8 @@ Directory Structure
 │   │   │   │   ├── robot_description.launch
 │   │   │   │   ├── world.launch
 │   │   │   ├── maps                           # maps folder for maps
-│   │   │   │   ├── myoffice.pgm
-│   │   │   │   ├── myoffice.yaml
+│   │   │   │   ├── map.pgm
+│   │   │   │   ├── map.yaml
 │   │   │   ├── meshes                         # meshes folder for sensors
 │   │   │   │   ├── hokuyo.dae
 │   │   │   ├── rviz                           # rviz folder for rviz configuration files
@@ -91,34 +79,9 @@ Directory Structure
 │   │   │   │   ├── my_robot.xacro
 │   │   │   ├── worlds                         # world folder for world files
 │   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── office.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
-│   │   ├── pgm_map_creator                    # pgm_map_creator        
-│   │   │   ├── launch                         # launch folder for launch files   
-│   │   │   │   ├── request_publisher.launch
-│   │   │   ├── maps                           # maps folder for generated maps
-│   │   │   │   ├── Backup_map.pgm
-│   │   │   │   ├── map.pgm
-│   │   │   ├── msgs                           # msgs folder for communication files
-│   │   │   │   ├── CMakeLists.txt
-│   │   │   │   ├── collision_map_request.proto
-│   │   │   ├── src                            # src folder for main function
-│   │   │   │   ├── collision_map_creator.cc
-│   │   │   │   ├── request_publisher.cc
-│   │   │   ├── world                          # world folder for world files
-│   │   │   │   ├── myoffice.world
-│   │   │   │   ├── udacity_mtv
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── LICENSE                        # License for repository
-│   │   │   ├── README.md                      # README for documentation
-│   │   │   ├── package.xml                    # package info
-│   │   ├── teleop_twist_keyboard              # teleop_twist_keyboard
-│   │   │   ├── CHANGELOG.rst                  # change log
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── README.md                      # README for documentation
-│   │   │   ├── package.xml                    # package info
-│   │   │   ├── teleop_twist_keyboard.py       # keyboard controller
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
