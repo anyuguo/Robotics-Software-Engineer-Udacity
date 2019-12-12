@@ -1,6 +1,6 @@
 # RoboND-Term1-P3-Where-Am-I
 Project 3 of Udacity Robotics Software Engineer Nanodegree Program
-![Overview](/videos/Term1-Project3-Where-Am-I-Demo_2.gif)  
+![Overview](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P3-Where-Am-I/video.gif)  
 ## Overview  
 In this project you'll utilize ROS AMCL package to accurately localize a mobile robot inside a map in the Gazebo simulation environments. Here are the steps to learn several aspects of robotic software engineering with a focus on ROS:  
 * Create a ROS package that launches a custom robot model in a custom Gazebo world  
