@@ -85,25 +85,11 @@ Directory Structure
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
-├── videos                                     # Video files
-│   ├── Term1-Project3-Where-Am-I-Demo_1.gif   # Demo video
-│   ├── Term1-Project3-Where-Am-I-Demo_2.gif   # Demo video
-│   ├── Term1-Project3-Where-Am-I-Demo_3.gif   # Demo video
-│   ├── Term1-Project3-Where-Am-I-Demo_4.gif   # Demo video
-```
-- [Term1-Project3-Where-Am-I-Demo_1.gif](/videos/Term1-Project3-Where-Am-I-Demo_1.gif): A demo video for failure run.  
-- [Term1-Project3-Where-Am-I-Demo_2.gif](/videos/Term1-Project3-Where-Am-I-Demo_2.gif): A demo video for successful run.  
-- [Term1-Project3-Where-Am-I-Demo_3.gif](/videos/Term1-Project3-Where-Am-I-Demo_3.gif): A demo video for successful run.  
-- [Term1-Project3-Where-Am-I-Demo_4.gif](/videos/Term1-Project3-Where-Am-I-Demo_4.gif): A demo video for successful run.  
+├── video.gif                                  # Video gif
+├── video.mp4                                  # Video fle
+``` 
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
-- [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.  
-- [gokart_description.launch](/catkin_ws/src/my_gokart/launch/gokart_description.launch): Create gokart model in Gazebo world.  
-- [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.  
-- [my_gokart.gazebo](/catkin_ws/src/my_gokart/urdf/my_gokart.gazebo): Define my_gokart URDF model plugins.  
-- [my_gokart.xacro](/catkin_ws/src/my_gokart/urdf/my_gokart.xacro): Define my_gokart URDF model.  
-- [empty.world](/catkin_ws/src/my_gokart/worlds/empty.world): Gazebo world file that includes nothing.  
-- [myoffice.world](/catkin_ws/src/my_gokart/worlds/myoffice.world): Gazebo world file that includes the models.  
-- [CMakeLists.txt](/catkin_ws/src/my_gokart/CMakeLists.txt): File to link the C++ code to libraries.  
+- [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.   
 - [robot_description.launch](/catkin_ws/src/my_robot/launch/robot_description.launch): Create robot model in Gazebo world.  
 - [hokuyo.dae](/catkin_ws/src/my_robot/meshes/hokuyo.dae): Hokuyo LiDAR sensor mesh model.  
 - [my_robot.gazebo](/catkin_ws/src/my_robot/urdf/my_robot.gazebo): Define my_robot URDF model plugins.  
@@ -117,11 +103,11 @@ Directory Structure
 ## Run the project  
 * Clone this repository
 ```
-git clone https://github.com/jinchaolu/RoboND-Term1-P3-Where-Am-I.git
+git clone https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/tree/master/P3-Where-Am-I.git
 ```
 * Open the repository and make  
 ```
-cd /home/workspace/RoboND-Term1-P3-Where-Am-I/catkin_ws/
+cd /home/workspace/P3-Where-Am-I/catkin_ws/
 catkin_make
 ```
 * Launch my_robot in Gazebo to load both the world and plugins  
@@ -154,53 +140,13 @@ You could control your robot by keyboard commands now.
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
 ```
-2. You might need to generate the map again because of the size.  
-Please refer to [Map_Setup.md](/Map_Setup.md) to generate your map step-by-step.  
-3. When you see this error:  
-[request_publisher-2] process has died [pid 7531, exit code -6, cmd /home/nvidia/Documents/github/RoboND-Term1-P3-Where-Am-I/catkin_ws/devel/lib/pgm_map_creator/request_publisher (-30,30)(30,30)(30,-30)(-30,-30) 5 0.01 /home/nvidia/Documents/github/RoboND-Term1-P3-Where-Am-I/catkin_ws/src/pgm_map_creator/maps/map __name:=request_publisher __log:=/home/nvidia/.ros/log/21ee11ca-411f-11e9-9258-00044bc5f185/request_publisher-2.log].
-log file: /home/nvidia/.ros/log/21ee11ca-411f-11e9-9258-00044bc5f185/request_publisher-2*.log
-
-Please refer to this link to fix it,  
-http://answers.gazebosim.org/question/8928/protobuf-error-for-custom-messages-transport-tutorial/  
-
-Then `catkin_make`  
-Then `source`  
-4. Got an error when launching amcl.launch  
+2. Got an error when launching amcl.launch  
 check the amcl.launch file that you have correctly mapped the topics to the correct published ones  
 ```
 <remap to="scan" from="my_robot/laser/scan"/>  
 ```
-Figure out amcl node is subscribing which topic? Then do the correct remapping.  
+
 
 ## Code Style  
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
-
-## Project Rubric  
-### 1. Basic Requirements  
-#### 1.1 Did the student submit all required files?  
-Yes, he did.   
-### 2. Simulation Setup
-#### 2.1 Did the student set up the simulation environment properly?  
-Yes, he did.  
-#### 2.2 Is the student's simulation setup suitable for the localization task?  
-Yes, it is.  
-### 3. Localization Setup  
-#### 3.1 Did the student correctly build the launch files for localization?  
-Yes, he did.  
-#### 3.2 Did the student properly set the parameters for localization?  
-Yes, he did.  
-### 4. Localization Performance  
-#### 4.1 Is the student's robot able to localize itself?  
-Yes, it is.  
-
-## Videos  
-Too few particles will result into localization failure.  
-![Demo_1](/videos/Term1-Project3-Where-Am-I-Demo_1.gif)  
-Good run demo 1.  
-![Demo_2](/videos/Term1-Project3-Where-Am-I-Demo_2.gif)  
-Good run demo 2.  
-![Demo_3](/videos/Term1-Project3-Where-Am-I-Demo_3.gif)  
-Good run demo 3.  
-![Demo_4](/videos/Term1-Project3-Where-Am-I-Demo_4.gif)  
-Good run demo 4.  
-![Demo_4](/videos/Term1-Project3-Where-Am-I-Demo_5.gif)  
+ 
