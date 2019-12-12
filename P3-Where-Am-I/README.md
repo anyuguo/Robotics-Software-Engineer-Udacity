@@ -95,8 +95,8 @@ Directory Structure
 - [my_robot.gazebo](/catkin_ws/src/my_robot/urdf/my_robot.gazebo): Define my_robot URDF model plugins.  
 - [my_robot.xacro](/catkin_ws/src/my_robot/urdf/my_robot.xacro): Define my_robot URDF model.  
 - [amcl.launch](/catkin_ws/src/my_robot/launch/amcl.launch): Launch AMCL node
-- [myoffice.pgm](/catkin_ws/src/my_robot/maps/myoffice.pgm): Generated myoffice map
-- [myoffice.yaml](/catkin_ws/src/my_robot/maps/myoffice.yaml): Info for myoffice map
+- [map.pgm](/catkin_ws/src/my_robot/maps/map.pgm): Generated myoffice map
+- [map.yaml](/catkin_ws/src/my_robot/maps/map.yaml): Info for myoffice map
 - [default.rviz](/catkin_ws/src/my_robot/rviz/default.rviz): Default rviz
 - [map.pgm](/catkin_ws/src/pgm_map_creator/maps/map.pgm): Generated myoffice map
 
