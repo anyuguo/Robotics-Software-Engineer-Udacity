@@ -1,6 +1,6 @@
 # RoboND-Term1-P5-Home-Service-Robot
 Project 5 of Udacity Robotics Software Engineer Nanodegree
-![Overview](/videos/Term1-Project5-Home-Service-Robot-Demo.gif)  
+![Overview](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P5-Home-Service-Robot/video.gif)  
 
 ## Overview  
 In this project, you will use everything you learned in the Nanodegree Program to build a Home Service Robot in ROS.  
@@ -98,14 +98,12 @@ Directory Structure
 │   │   ├── turtlebot_interactions                        # view_navigation.launch file
 │   │   ├── turtlebot_simulator                           # turtlebot_world.launch file package        
 │   │   ├── CMakeLists.txt                                # compiler instructions
-├── videos                                                # Videos
-│   ├── Term1-Project5-Home-Service-Robot-Demo.gif        # Videos for overview
+├── video.mp4                                             # Videos for overview
+├── video.gif                                             # GIF for overview
 ```
 - [view_home_service_navigation.launch](/catkin_ws/src/add_markers/launch/view_home_service_navigation.launch): Launch rviz with specify rviz configuration file  
-- [add_markers.cpp](/catkin_ws/src/pick_objects/src/add_markers.cpp): C++ script, communicate with `pick_objects` node and control the marker appearance to simulate object pick up and drop off  
-- [add_markers_demo.cpp](/catkin_ws/src/pick_objects/src/add_markers_demo.cpp): C++ script, control the marker appearance to simulate object pick up and drop off  
+- [add_markers.cpp](/catkin_ws/src/pick_objects/src/add_markers.cpp): C++ script, communicate with `pick_objects` node and control the marker appearance to simulate object pick up and drop off   
 - [pick_objects.cpp](/catkin_ws/src/pick_objects/src/pick_objects.cpp): C++ script, communicate with `add_markers` node and command the robot to pick up the object  
-- [pick_objects_demo.cpp](/catkin_ws/src/pick_objects/src/pick_objects_demo.cpp): C++ script, command the robot to pick up the object  
 - [home_service_rvizConfig.rviz](/catkin_ws/src/rvizConfig/home_service_rvizConfig.rviz): rvizConfig file for home service robot demo which contained `markers` option  
 - [add_marker.sh](/catkin_ws/src/scripts/add_marker.sh): Shell script file to deploy a turtlebot inside your environment, model a virtual object with markers in `rviz`.  
 - [home_service.sh](/catkin_ws/src/scripts/home_service.sh): Shell script file to deploy a turtlebot inside your environment, simulate a full home service robot capable of navigating to pick up and deliver virtual objects.  
@@ -114,12 +112,12 @@ Directory Structure
 - [test_slam.sh](/catkin_ws/src/scripts/test_slam.sh): Shell script file to deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in `rviz`  
 
 - [CMakeLists.txt](/catkin_ws/src/CMakeLists.txt): File to link the C++ code to libraries.  
-- [Term1-Project5-Home-Service-Robot-Demo.gif](/videos/Term1-Project5-Home-Service-Robot-Demo.gif): An demo video for final home service robot run  
+- [video.gif](video.gif): A gif of video for final home service robot run  
 
 ## Run the project  
 * Clone this repository
 ```
-git clone https://github.com/jinchaolu/RoboND-Term1-P5-Home-Service-Robot.git
+
 ```
 * Navigate to the `src` folder and clone the necessary repositories  
 ```
@@ -131,7 +129,7 @@ git clone https://github.com/turtlebot/turtlebot_simulator.git
 ```
 * Open the repository, make and source  
 ```
-cd /home/workspace/RoboND-Term1-P5-Home-Service-Robot/catkin_ws/
+cd /home/workspace/catkin_ws/
 catkin_make
 source devel/setup.bash
 ```
@@ -172,28 +170,3 @@ To see the marker(virtual objects) demo, in addition to running the `./add_marke
 
 ## Code Style  
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
-
-## Project Rubric  
-### 1. Basic Requirements  
-#### 1.1 Did the student submit all required files?  
-Yes, he did.   
-### 2. Simulation Setup
-#### 2.1 Did the student set up the simulation environment properly?  
-Yes, he did.  
-### 3. Mapping  
-#### 3.1 Did the student's mapping function work properly?  
-Yes, he did.  
-#### 3.2 Did the student create a map using SLAM?  
-Yes, he did.  
-### 4. Localization and Navigation  
-#### 4.1 Was the student's navigation stack configured properly?  
-Yes, he was.  
-#### 4.2 Did the student's goal node function properly?  
-Yes, he did.  
-### 5. Home Service Functions  
-### 5.1 Did the student create virtual object with markers?  
-Yes, he did.  
-### 5.2 Does the student's robot perform home service tasks correctly?  
-Yes, he was.  
-### 5.3 Did the student include a write-up explaining the packages used to achieve home service functionalities?  
-Yes, he did.  
