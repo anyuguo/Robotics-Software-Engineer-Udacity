@@ -129,7 +129,8 @@ Directory Structure
 ├── screenshot1.JPG                            # Screenshots
 ├── rtabmap.db
 ```
-- [Overview.png](screenshot.JPG): An overview screenshot to demo the final result
+- [screenshot.jpg](screenshot.JPG): screenshot1
+- [screenshot2.jpg](screenshot2.JPG): screenshot2
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
 - [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.   
 - [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.    
