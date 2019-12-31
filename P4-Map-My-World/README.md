@@ -1,6 +1,7 @@
 # RoboND-Term1-P4-Map-My-World
 Project 4 of Udacity Robotics Software Engineer Nanodegree Program
-![Overview](/screenshots/Overview.png)  
+![pic1](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P4-Map-My-World/screenshot2.JPG)
+![pic2](https://github.com/anyuguo/Robotics-Software-Engineer-Udacity/blob/master/P4-Map-My-World/screenshot.JPG)
 
 ## Overview  
 In this project you will create a 2D occupancy grid and 3D octomap from a simulated environment using your own robot with the RTAB-Map package.  
@@ -57,7 +58,6 @@ Directory Structure
 ```
 .Map-My-World                                  # Map My World Project
 ├── catkin_ws                                  # Catkin workspace
-│   ├── frames.pdf                             # view_frames result
 │   ├── src
 │   │   ├── ball_chaser                        # ball_chaser package        
 │   │   │   ├── launch                         # launch folder for launch files
@@ -67,18 +67,6 @@ Directory Structure
 │   │   │   │   ├── process_images.cpp
 │   │   │   ├── srv                            # service folder for ROS services
 │   │   │   │   ├── DriveToTarget.srv
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── package.xml                    # package info
-│   │   ├── my_gokart                          # my_gokart package        
-│   │   │   ├── launch                         # launch folder for launch files   
-│   │   │   │   ├── gokart_description.launch
-│   │   │   │   ├── world.launch
-│   │   │   ├── urdf                           # urdf folder for xarco files
-│   │   │   │   ├── my_gokart.gazebo
-│   │   │   │   ├── my_gokart.xacro
-│   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
 │   │   ├── my_robot                           # my_robot package        
@@ -93,9 +81,10 @@ Directory Structure
 │   │   │   │   ├── world.launch
 │   │   │   │   ├── mapping.launch
 │   │   │   │   ├── localization.launch
+│   │   │   │   ├── rtabmap.db
 │   │   │   ├── maps                           # maps folder for maps
-│   │   │   │   ├── myoffice.pgm
-│   │   │   │   ├── myoffice.yaml
+│   │   │   │   ├── map.pgm
+│   │   │   │   ├── map.yaml
 │   │   │   ├── meshes                         # meshes folder for sensors
 │   │   │   │   ├── hokuyo.dae
 │   │   │   ├── rviz                           # rviz folder for rviz configuration files
@@ -105,7 +94,7 @@ Directory Structure
 │   │   │   │   ├── my_robot.xacro
 │   │   │   ├── worlds                         # world folder for world files
 │   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── office.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
 │   │   ├── pgm_map_creator                    # pgm_map_creator        
@@ -121,7 +110,7 @@ Directory Structure
 │   │   │   │   ├── collision_map_creator.cc
 │   │   │   │   ├── request_publisher.cc
 │   │   │   ├── world                          # world folder for world files
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── office.world
 │   │   │   │   ├── udacity_mtv
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── LICENSE                        # License for repository
@@ -136,16 +125,14 @@ Directory Structure
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
-├── screenshots                                # Screenshots
-│   ├── Overview.png                           # Screenshot for overview
+├── screenshot.JPG                             # Screenshots
+├── screenshot1.JPG                            # Screenshots
+├── rtabmap.db
 ```
 - [Overview.png](/screenshots/Overview.png): An overview screenshot to demo the final result
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
-- [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.  
-- [gokart_description.launch](/catkin_ws/src/my_gokart/launch/gokart_description.launch): Create gokart model in Gazebo world.  
-- [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.  
-- [my_gokart.gazebo](/catkin_ws/src/my_gokart/urdf/my_gokart.gazebo): Define my_gokart URDF model plugins.  
-- [my_gokart.xacro](/catkin_ws/src/my_gokart/urdf/my_gokart.xacro): Define my_gokart URDF model.  
+- [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.   
+- [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.    
 - [empty.world](/catkin_ws/src/my_gokart/worlds/empty.world): Gazebo world file that includes nothing.  
 - [myoffice.world](/catkin_ws/src/my_gokart/worlds/myoffice.world): Gazebo world file that includes the models.  
 - [CMakeLists.txt](/catkin_ws/src/my_gokart/CMakeLists.txt): File to link the C++ code to libraries.  
@@ -154,8 +141,8 @@ Directory Structure
 - [my_robot.gazebo](/catkin_ws/src/my_robot/urdf/my_robot.gazebo): Define my_robot URDF model plugins.  
 - [my_robot.xacro](/catkin_ws/src/my_robot/urdf/my_robot.xacro): Define my_robot URDF model.  
 - [amcl.launch](/catkin_ws/src/my_robot/launch/amcl.launch): Launch AMCL node
-- [myoffice.pgm](/catkin_ws/src/my_robot/maps/myoffice.pgm): Generated myoffice map
-- [myoffice.yaml](/catkin_ws/src/my_robot/maps/myoffice.yaml): Info for myoffice map
+- [map.pgm](/catkin_ws/src/my_robot/maps/map.pgm): Generated myoffice map
+- [map.yaml](/catkin_ws/src/my_robot/maps/map.yaml): Info for myoffice map
 - [default.rviz](/catkin_ws/src/my_robot/rviz/default.rviz): Default rviz
 - [map.pgm](/catkin_ws/src/pgm_map_creator/maps/map.pgm): Generated myoffice map
 - [localization.launch](/catkin_ws/src/my_robot/launch/localization.launch): Launch localization node
@@ -164,11 +151,11 @@ Directory Structure
 ## Run the project  
 * Clone this repository
 ```
-https://github.com/jinchaolu/RoboND-Term1-P4-Map-My-World.git
+
 ```
 * Open the repository and make  
 ```
-cd /home/workspace/RoboND-Term1-P4-Map-My-World/catkin_ws/
+cd /home/workspace/catkin_ws/
 catkin_make
 ```
 * Launch my_robot in Gazebo to load both the world and plugins  
@@ -207,21 +194,3 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 ## Code Style  
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
-
-## Project Rubric  
-### 1. Basic Requirements  
-#### 1.1 Did the student submit all required files?  
-Yes, he did.   
-### 2. Simulation Setup
-#### 2.1 Did the student set up the simulation environment properly?  
-Yes, he did.  
-#### 2.2 Is the student's simulation suitable for mapping task?  
-Yes, it is.  
-### 3. Mapping Package  
-#### 3.1 Does the student correctly build all required launch files for RTAB-Mapping?  
-Yes, he does.  
-### 4. Mapping Accuracy  
-#### 4.1 Was the student able to generate a 3D map using RTAB-Map?  
-Yes, he was.  
-#### 4.2 Does the student's 3D map portray environment characteristics?  
-Yes, he does.  
