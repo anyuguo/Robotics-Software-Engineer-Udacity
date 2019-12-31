@@ -1,0 +1,2 @@
+rtabmap.db filter=lfs diff=lfs merge=lfs -text
+map.pgm filter=lfs diff=lfs merge=lfs -text
